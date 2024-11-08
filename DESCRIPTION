@@ -8,8 +8,5 @@ Description: Functions that enable the creation of reactive multiFitR plots via 
 License: use_mit_license()
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
+Imports: dplyr, plotly, multiFitR
 RoxygenNote: 7.3.2
-Imports:
-    dplyr
-    plotly
-    multiFitR

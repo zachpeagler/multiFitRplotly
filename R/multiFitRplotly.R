@@ -18,11 +18,7 @@ multiPDF_plotly <- function (x, seq_length, distributions) {
     distributions <- c("normal",
                        "lognormal",
                        "gamma",
-                       "exponential",
-                       "cauchy",
-                       "t",
-                       "weibull",
-                       "logistic")
+                       "exponential")
   }
   # calculate PDFs
   data <- multiPDF_cont(x, seq_length, distributions)
@@ -40,18 +36,6 @@ multiPDF_plotly <- function (x, seq_length, distributions) {
   }
   if ("exponential" %in% distributions == TRUE) {
     p <- p %>% plotly::add_trace(p, y=~pdf_exponential, name='Exponential')
-  }
-  if ("cauchy" %in% distributions == TRUE) {
-    p <- p %>% plotly::add_trace(p, y=~pdf_cauchy, name='Cauchy')
-  }
-  if ("t" %in% distributions == TRUE) {
-    p <- p %>% plotly::add_trace(p, y=~pdf_t, name='t')
-  }
-  if ("weibull" %in% distributions == TRUE) {
-    p <- p %>% plotly::add_trace(p, y=~pdf_weibull, name='Weibull')
-  }
-  if ("logistic" %in% distributions == TRUE) {
-    p <- p %>% plotly::add_trace(p, y=~pdf_logistic, name='LogLogistic')
   }
   p <- p %>% plotly::layout(legend = list(orientation = "h",
                                           xanchor = "center",
@@ -82,11 +66,7 @@ multiCDF_plotly <- function (x, seq_length, distributions) {
     distributions <- c("normal",
                        "lognormal",
                        "gamma",
-                       "exponential",
-                       "cauchy",
-                       "t",
-                       "weibull",
-                       "logistic")
+                       "exponential")
   }
   # calculate PDFs
   data <- multiCDF_cont(x, seq_length, distributions)
@@ -104,18 +84,6 @@ multiCDF_plotly <- function (x, seq_length, distributions) {
   }
   if ("exponential" %in% distributions == TRUE) {
     p <- p %>% plotly::add_trace(p, y=~cdf_exponential, name='Exponential')
-  }
-  if ("cauchy" %in% distributions == TRUE) {
-    p <- p %>% plotly::add_trace(p, y=~cdf_cauchy, name='Cauchy')
-  }
-  if ("t" %in% distributions == TRUE) {
-    p <- p %>% plotly::add_trace(p, y=~cdf_t, name='t')
-  }
-  if ("weibull" %in% distributions == TRUE) {
-    p <- p %>% plotly::add_trace(p, y=~cdf_weibull, name='Weibull')
-  }
-  if ("logistic" %in% distributions == TRUE) {
-    p <- p %>% plotly::add_trace(p, y=~cdf_logistic, name='LogLogistic')
   }
   p <- p %>% plotly::layout(legend = list(orientation = "h",
                                           xanchor = "center",
